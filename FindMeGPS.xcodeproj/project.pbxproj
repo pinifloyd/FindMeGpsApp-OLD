@@ -22,13 +22,13 @@
 		A5BD0D9415555724004D6207 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5BD0D9615555724004D6207 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A5BD0D9815555724004D6207 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A5BD0D9C15555724004D6207 /* FindMeGPS-Info.plist */ = {isa = PBXFileReference; path = "FindMeGPS-Info.plist"; sourceTree = "<group>"; };
+		A5BD0D9C15555724004D6207 /* FindMeGPS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FindMeGPS-Info.plist"; sourceTree = "<group>"; };
 		A5BD0D9E15555724004D6207 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5BD0DA015555724004D6207 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		A5BD0DA215555724004D6207 /* FindMeGPS-Prefix.pch */ = {isa = PBXFileReference; path = "FindMeGPS-Prefix.pch"; sourceTree = "<group>"; };
-		A5BD0DA315555724004D6207 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		A5BD0DA215555724004D6207 /* FindMeGPS-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FindMeGPS-Prefix.pch"; sourceTree = "<group>"; };
+		A5BD0DA315555724004D6207 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A5BD0DA415555724004D6207 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		A5BD0DA615555724004D6207 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		A5BD0DA615555724004D6207 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A5BD0DA715555724004D6207 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A5BD0DAA15555724004D6207 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
