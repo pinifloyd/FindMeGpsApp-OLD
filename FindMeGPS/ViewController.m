@@ -52,12 +52,28 @@
     didUpdateToLocation:(CLLocation *)newLocation
            fromLocation:(CLLocation *)oldLocation {
   
-  // NSLog(@"%+.20f", newLocation.coordinate.latitude);
-  
   self.currentLocationLat.text = [NSString stringWithFormat:@"%+.20f", newLocation.coordinate.latitude];
   self.currentLocationLng.text = [NSString stringWithFormat:@"%+.20f", newLocation.coordinate.longitude];
   
   self.oldLocationLat.text = [NSString stringWithFormat:@"%+.20f", oldLocation.coordinate.latitude];
   self.oldLocationLng.text = [NSString stringWithFormat:@"%+.20f", oldLocation.coordinate.longitude];
+  
+  [self postLocationCoordinates:newLocation.coordinate.latitude :newLocation.coordinate.longitude];
+}
+
+- (void) postLocationCoordinates:(float)latitude:(float)longitude {
+  NSString *post = [NSString stringWithFormat:@"latitude=%+.20f&longitude=%+.20f", latitude, longitude];
+  NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+  NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+  
+  NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+  [request setURL:[NSURL URLWithString:@"http://sergey-hanchar:3000/"]];
+  [request setHTTPMethod:@"POST"];
+  [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+  [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+  [request setHTTPBody:postData];
+  
+  // Coonecting to server
+  [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 @end
