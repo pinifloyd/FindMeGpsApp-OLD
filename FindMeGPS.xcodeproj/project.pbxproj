@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A511C7551556D385009ADFB1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A511C7541556D385009ADFB1 /* CoreLocation.framework */; };
 		A5BD0D9515555724004D6207 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD0D9415555724004D6207 /* UIKit.framework */; };
 		A5BD0D9715555724004D6207 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD0D9615555724004D6207 /* Foundation.framework */; };
 		A5BD0D9915555724004D6207 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5BD0D9815555724004D6207 /* CoreGraphics.framework */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A511C7541556D385009ADFB1 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A5BD0D9015555724004D6207 /* FindMeGPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindMeGPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5BD0D9415555724004D6207 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A5BD0D9615555724004D6207 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A511C7551556D385009ADFB1 /* CoreLocation.framework in Frameworks */,
 				A5BD0D9515555724004D6207 /* UIKit.framework in Frameworks */,
 				A5BD0D9715555724004D6207 /* Foundation.framework in Frameworks */,
 				A5BD0D9915555724004D6207 /* CoreGraphics.framework in Frameworks */,
@@ -67,6 +70,7 @@
 		A5BD0D9315555724004D6207 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A511C7541556D385009ADFB1 /* CoreLocation.framework */,
 				A5BD0D9415555724004D6207 /* UIKit.framework */,
 				A5BD0D9615555724004D6207 /* Foundation.framework */,
 				A5BD0D9815555724004D6207 /* CoreGraphics.framework */,
@@ -108,6 +112,7 @@
 				A5BD0D8C15555724004D6207 /* Sources */,
 				A5BD0D8D15555724004D6207 /* Frameworks */,
 				A5BD0D8E15555724004D6207 /* Resources */,
+				50524F424C454D533F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -156,6 +161,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		50524F424C454D533F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+
 /* Begin PBXSourcesBuildPhase section */
 		A5BD0D8C15555724004D6207 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -195,7 +217,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -220,7 +242,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
@@ -240,6 +262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FindMeGPS/FindMeGPS-Prefix.pch";
 				INFOPLIST_FILE = "FindMeGPS/FindMeGPS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -251,6 +274,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FindMeGPS/FindMeGPS-Prefix.pch";
 				INFOPLIST_FILE = "FindMeGPS/FindMeGPS-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -275,6 +299,7 @@
 				A5BD0DB015555724004D6207 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

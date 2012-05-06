@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <CLLocationManagerDelegate> {
+  CLLocationManager *locationManager;
+}
+
+@property (nonatomic, retain) CLLocationManager *locationManager;
+
+@property (weak, nonatomic) IBOutlet UILabel *currentLocationLat;
+@property (weak, nonatomic) IBOutlet UILabel *currentLocationLng;
+@property (weak, nonatomic) IBOutlet UILabel *oldLocationLat;
+@property (weak, nonatomic) IBOutlet UILabel *oldLocationLng;
 
 @end
