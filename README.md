@@ -1,2 +1,1 @@
-FindMeGpsApp
-============
+Just part of my diplom.
